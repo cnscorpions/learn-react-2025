@@ -1,6 +1,4 @@
-import Head from 'next/head'
 import { useAuth } from '../lib/auth'
-import styles from '../styles/Home.module.css'
 
 export default function Home() {
 
@@ -13,7 +11,10 @@ export default function Home() {
         <button onClick={(e) => auth.signout()}>Sign Out</button>
       </div>
     ) : (
-      <button onClick={(e) => auth.signinWithGitHub()}>Sign In</button>
+      <>
+        <button onClick={(e) => auth.signinWithGitHub()}>Sign In with Github</button>
+        <button onClick={(e) => auth.signinWithGoogle(false)}>Sign In with Google</button>
+      </>
     )
   )
 }
